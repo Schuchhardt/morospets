@@ -1,5 +1,5 @@
 import { MessageCircle, Phone, Instagram } from "lucide-react";
-import logo from "@/assets/morospets-logo.jpg";
+import icon from "@/assets/moros-icon.png";
 
 const WHATSAPP_LINK = "https://wa.me/56988881125?text=Hola,%20quiero%20agendar%20un%20servicio%20para%20mi%20perro";
 
