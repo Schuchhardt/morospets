@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
 import { MessageCircle, CalendarCheck, ClipboardList, CheckCircle } from "lucide-react";
-import { fadeUp, fadeUpDelay } from "@/lib/animations";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 const WHATSAPP_LINK = "https://wa.me/56988881125?text=Hola,%20quiero%20agendar%20un%20servicio%20para%20mi%20perro";
 
@@ -12,20 +11,20 @@ const steps = [
 ];
 
 const Booking = () => (
-  <section id="agenda" className="py-20 md:py-28 bg-primary/5">
+  <section id="agenda" className="py-20 md:py-28 bg-primary/5" aria-labelledby="booking-heading">
     <div className="container">
-      <motion.div {...fadeUp} className="max-w-2xl mx-auto text-center mb-14">
+      <AnimateOnScroll className="max-w-2xl mx-auto text-center mb-14">
         <span className="text-sm font-semibold text-accent tracking-wide uppercase">Agenda</span>
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mt-3 mb-5">
+        <h2 id="booking-heading" className="text-3xl md:text-4xl font-bold text-primary mt-3 mb-5">
           Reserva fácilmente el cuidado de tu perro
         </h2>
         <p className="text-muted-foreground text-lg">
           Puedes agendar tu servicio de forma rápida a través de WhatsApp.
           Nos pondremos en contacto si necesitamos más información.
         </p>
-      </motion.div>
+      </AnimateOnScroll>
 
-      <motion.div {...fadeUp} {...fadeUpDelay(0.15)}>
+      <AnimateOnScroll delay={0.15}>
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
           {steps.map((step, i) => (
             <div key={step.label} className="bg-card rounded-2xl p-6 border border-border text-center">
@@ -37,9 +36,9 @@ const Booking = () => (
             </div>
           ))}
         </div>
-      </motion.div>
+      </AnimateOnScroll>
 
-      <motion.div {...fadeUp} {...fadeUpDelay(0.3)} className="text-center">
+      <AnimateOnScroll delay={0.3} className="text-center">
         <a
           href={WHATSAPP_LINK}
           target="_blank"
@@ -50,7 +49,7 @@ const Booking = () => (
           Agendar por WhatsApp
         </a>
         <p className="text-sm text-muted-foreground mt-4">Es la forma más rápida y directa de reservar</p>
-      </motion.div>
+      </AnimateOnScroll>
     </div>
   </section>
 );

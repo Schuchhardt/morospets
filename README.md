@@ -1,73 +1,81 @@
-# Welcome to your Lovable project
+# Moro's Pets — Peluquería Canina con Bienestar Animal
 
-## Project info
+Landing page para **Moro's Pets**, una peluquería canina y servicio de paseos con enfoque en bienestar animal ubicada en Santiago, Chile.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Tech Stack
 
-## How can I edit this code?
+- **Next.js 15** (App Router, SSR/SSG)
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS 3** + `tailwindcss-animate`
+- **shadcn/ui** (componentes selectos: toast, tooltip, sonner)
+- **Lucide React** (iconos)
+- **next/font** (Montserrat + DM Sans, optimizados)
+- **next/image** (WebP/AVIF automático, lazy loading)
 
-There are several ways of editing your application.
+## SEO & AEO
 
-**Use Lovable**
+El sitio está optimizado para motores de búsqueda y motores de respuestas (Google AI Overview, Bing Copilot, etc.):
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **SSR completo** — todo el contenido está en el HTML inicial (no depende de JS del cliente)
+- **Metadata API** de Next.js — title, description, keywords, Open Graph, Twitter Cards, canonical, robots
+- **JSON-LD structured data** — `LocalBusiness`, `Service` (7 servicios), `FAQPage` (5 Q&A), `WebSite`
+- **Sitemap XML** dinámico — `/sitemap.xml`
+- **Robots.txt** dinámico — `/robots.txt`
+- **PWA Manifest** — `/manifest.webmanifest`
+- **HTML semántico** — `<main>`, `<section>`, `<header>`, `<footer>`, `<nav>`, `aria-labelledby`, jerarquía de headings correcta
 
-Changes made via Lovable will be committed automatically to this repo.
+## Desarrollo
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Requisito: Node.js 18+ y npm.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Instalar dependencias
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Servidor de desarrollo (Turbopack)
 npm run dev
+
+# Build de producción
+npm run build
+
+# Servidor de producción
+npm start
+
+# Tests unitarios
+npm test
+
+# Tests E2E (Playwright)
+npx playwright test
 ```
 
-**Edit a file directly in GitHub**
+## Estructura del proyecto
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```
+app/
+  layout.tsx           # Layout raíz (metadata, fonts, providers)
+  page.tsx             # Home con JSON-LD structured data
+  not-found.tsx        # Página 404
+  globals.css          # Estilos globales + CSS animations
+  sitemap.ts           # Genera /sitemap.xml
+  robots.ts            # Genera /robots.txt
+  manifest.ts          # PWA manifest
+src/
+  components/
+    AnimateOnScroll.tsx # Animaciones scroll (IntersectionObserver + CSS)
+    Header.tsx          # Navegación con menú móvil
+    Hero.tsx            # Sección hero
+    About.tsx           # Sobre nosotros
+    Services.tsx        # Servicios (peluquería + paseos)
+    Philosophy.tsx      # Filosofía de bienestar
+    Booking.tsx         # Cómo agendar
+    Contact.tsx         # Información de contacto
+    Instagram.tsx       # CTA de Instagram
+    Footer.tsx          # Pie de página
+    WhatsAppFloat.tsx   # Botón flotante de WhatsApp
+    ui/                 # Componentes shadcn/ui (toast, tooltip, sonner)
+  hooks/                # Custom hooks (useIsMobile, useToast)
+  lib/                  # Utilidades (cn)
+public/
+  images/               # Imágenes estáticas (hero-dog, paseos-dog, moros-icon)
+```

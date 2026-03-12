@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 30% 93%;
+    --foreground: 40 10% 25%;
+
+    --card: 30 25% 96%;
+    --card-foreground: 40 10% 25%;
+
+    --popover: 30 25% 96%;
+    --popover-foreground: 40 10% 25%;
+
+    --primary: 60 15% 32%;
+    --primary-foreground: 30 30% 95%;
+
+    --secondary: 30 20% 88%;
+    --secondary-foreground: 60 15% 32%;
+
+    --muted: 30 15% 88%;
+    --muted-foreground: 40 8% 45%;
+
+    --accent: 14 55% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 60 15% 32%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Scroll-triggered animations (replaces framer-motion) ── */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+}
+
+.animate-on-scroll.is-visible {
+  animation-fill-mode: forwards;
+}
+
+.animate-on-scroll.is-visible.anim-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.animate-on-scroll.is-visible.anim-fade-left {
+  animation: fade-left 0.8s ease-out forwards;
+}
+
+.animate-on-scroll.is-visible.anim-fade-right {
+  animation: fade-right 0.8s ease-out forwards;
+}
+
+.animate-on-scroll.is-visible.anim-scale-in {
+  animation: scale-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-on-scroll.is-visible.anim-slide-right {
+  animation: slide-right 0.4s ease-out forwards;
+}
+
+/* Hero mount animations (play immediately, no scroll trigger) */
+.animate-hero-left {
+  animation: fade-left 0.8s ease-out forwards;
+}
+
+.animate-hero-right {
+  animation: fade-right 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+/* WhatsApp float entrance */
+.animate-whatsapp-float {
+  animation: scale-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s forwards;
+  opacity: 0;
+}
+
+/* Mobile menu transition */
+.mobile-menu-enter {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.mobile-menu-enter.mobile-menu-open {
+  max-height: 400px;
+  opacity: 1;
+}

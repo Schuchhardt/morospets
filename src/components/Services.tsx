@@ -1,22 +1,20 @@
-import { motion } from "framer-motion";
 import { Scissors, TreePine } from "lucide-react";
-import { fadeUp, fadeUpDelay } from "@/lib/animations";
-import heroImg from "@/assets/hero-dog.jpg";
-import paseosImg from "@/assets/paseos-dog.jpg";
+import Image from "next/image";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 const groomingServices = ["Baño y secado", "Corte de pelo", "Corte de uñas", "Limpieza de oídos", "Limpieza de glándulas"];
 
 const Services = () => (
-  <section id="servicios" className="py-20 md:py-28">
+  <section id="servicios" className="py-20 md:py-28" aria-labelledby="services-heading">
     <div className="container">
-      <motion.div {...fadeUp} className="text-center mb-16">
+      <AnimateOnScroll className="text-center mb-16">
         <span className="text-sm font-semibold text-accent tracking-wide uppercase">Servicios</span>
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mt-3">Lo que hacemos por tu perro</h2>
-      </motion.div>
+        <h2 id="services-heading" className="text-3xl md:text-4xl font-bold text-primary mt-3">Lo que hacemos por tu perro</h2>
+      </AnimateOnScroll>
 
       <div className="grid md:grid-cols-2 gap-8">
-        <motion.div {...fadeUp} className="bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow duration-500">
-          <img src={heroImg} alt="Servicio de peluquería canina" className="w-full h-56 object-cover" loading="lazy" />
+        <AnimateOnScroll className="bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow duration-500">
+          <Image src="/images/hero-dog.jpg" alt="Servicio de peluquería canina en Moro's Pets" width={600} height={224} className="w-full h-56 object-cover" />
           <div className="p-8">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -37,10 +35,10 @@ const Services = () => (
               ))}
             </ul>
           </div>
-        </motion.div>
+        </AnimateOnScroll>
 
-        <motion.div {...fadeUp} {...fadeUpDelay(0.15)} className="bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow duration-500">
-          <img src={paseosImg} alt="Servicio de paseos para perros" className="w-full h-56 object-cover" loading="lazy" />
+        <AnimateOnScroll delay={0.15} className="bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow duration-500">
+          <Image src="/images/paseos-dog.jpg" alt="Servicio de paseos para perros en Moro's Pets" width={600} height={224} className="w-full h-56 object-cover" />
           <div className="p-8">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -61,7 +59,7 @@ const Services = () => (
               ))}
             </ul>
           </div>
-        </motion.div>
+        </AnimateOnScroll>
       </div>
     </div>
   </section>

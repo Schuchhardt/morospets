@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import { fadeUp, fadeUpDelay } from "@/lib/animations";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 const points = [
   "Atención sin estrés",
@@ -12,38 +11,36 @@ const points = [
 ];
 
 const Philosophy = () => (
-  <section className="py-20 md:py-28 bg-primary/5">
+  <section className="py-20 md:py-28 bg-primary/5" aria-labelledby="philosophy-heading">
     <div className="container grid md:grid-cols-2 gap-12 items-center">
-      <motion.div {...fadeUp}>
+      <AnimateOnScroll>
         <span className="text-sm font-semibold text-accent tracking-wide uppercase">Nuestra filosofía</span>
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mt-3 mb-5">
+        <h2 id="philosophy-heading" className="text-3xl md:text-4xl font-bold text-primary mt-3 mb-5">
           Cuidado respetuoso para cada perro
         </h2>
         <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-          En Moro's Pets cada perro es único, por eso adaptamos nuestra atención según sus necesidades.
+          En Moro&apos;s Pets cada perro es único, por eso adaptamos nuestra atención según sus necesidades.
           Queremos que cada visita sea una experiencia positiva.
         </p>
-      </motion.div>
+      </AnimateOnScroll>
 
-      <motion.div {...fadeUp} {...fadeUpDelay(0.2)}>
+      <AnimateOnScroll delay={0.2}>
         <div className="grid gap-4">
           {points.map((point, i) => (
-            <motion.div
+            <AnimateOnScroll
               key={point}
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
+              animation="slide-right"
+              delay={i * 0.08}
               className="flex items-center gap-3 bg-card rounded-xl p-4 border border-border"
             >
               <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                 <Check className="text-primary" size={16} />
               </div>
               <span className="font-medium text-foreground">{point}</span>
-            </motion.div>
+            </AnimateOnScroll>
           ))}
         </div>
-      </motion.div>
+      </AnimateOnScroll>
     </div>
   </section>
 );

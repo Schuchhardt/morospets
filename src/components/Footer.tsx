@@ -1,5 +1,5 @@
 import { MessageCircle, Phone, Instagram } from "lucide-react";
-import icon from "@/assets/moros-icon.png";
+import Image from "next/image";
 
 const WHATSAPP_LINK = "https://wa.me/56988881125?text=Hola,%20quiero%20agendar%20un%20servicio%20para%20mi%20perro";
 
@@ -9,8 +9,8 @@ const Footer = () => (
       <div className="grid md:grid-cols-2 gap-8 items-start">
         <div>
           <div className="flex items-center gap-3 mb-3">
-            <img src={icon} alt="Moro's Pets" className="h-10 w-auto brightness-0 invert" />
-            <span className="font-display font-bold text-lg tracking-tight uppercase">Moro's Pets</span>
+            <Image src="/images/moros-icon.png" alt="Moro's Pets" width={40} height={40} className="h-10 w-auto brightness-0 invert" />
+            <span className="font-display font-bold text-lg tracking-tight uppercase">Moro&apos;s Pets</span>
           </div>
           <p className="text-primary-foreground/70 text-sm max-w-sm">
             Peluquería canina y paseos con enfoque en bienestar animal.
@@ -32,7 +32,7 @@ const Footer = () => (
       </div>
 
       <div className="border-t border-primary-foreground/10 mt-8 pt-6 text-center">
-        <p className="text-xs text-primary-foreground/40">© 2026 Moro's Pets. Todos los derechos reservados.</p>
+        <p className="text-xs text-primary-foreground/40">&copy; 2026 Moro&apos;s Pets. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
