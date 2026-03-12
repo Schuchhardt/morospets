@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/morospets-logo.jpg";
+import icon from "@/assets/moros-icon.png";
 
 const WHATSAPP_LINK = "https://wa.me/56988881125?text=Hola,%20quiero%20agendar%20un%20servicio%20para%20mi%20perro";
 
@@ -19,7 +19,8 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16">
         <a href="#inicio" className="flex items-center gap-2">
-          <img src={logo} alt="Moro's Pets" className="h-10 w-auto" />
+          <img src={icon} alt="Moro's Pets" className="h-9 w-auto" />
+          <span className="font-display font-bold text-lg tracking-tight text-foreground uppercase">Moro's Pets</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
