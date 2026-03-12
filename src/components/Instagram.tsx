@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
 import { Instagram as InstaIcon } from "lucide-react";
-
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-50px" },
-  transition: { duration: 0.6, ease: "easeOut" },
-};
+import { fadeUp } from "@/lib/animations";
 
 const InstagramSection = () => (
   <section className="py-20 md:py-28">
@@ -15,9 +9,7 @@ const InstagramSection = () => (
         <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-6">
           <InstaIcon className="text-accent" size={32} />
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-          Síguenos en Instagram
-        </h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Síguenos en Instagram</h2>
         <p className="text-muted-foreground text-lg mb-8">
           Compartimos fotos de nuestros servicios, paseos y experiencias con los perritos que nos visitan.
         </p>

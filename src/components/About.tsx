@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
 import { Heart, Leaf, Shield } from "lucide-react";
-
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-50px" },
-  transition: { duration: 0.6, ease: "easeOut" },
-};
+import { fadeUp, fadeUpDelay } from "@/lib/animations";
 
 const About = () => (
   <section id="sobre" className="py-20 md:py-28">
@@ -25,26 +19,14 @@ const About = () => (
 
       <div className="grid md:grid-cols-3 gap-6">
         {[
-          {
-            icon: Shield,
-            title: "Sin bozales ni amarres",
-            desc: "Priorizamos métodos de manejo respetuoso que permitan que cada perro viva la experiencia de forma positiva.",
-          },
-          {
-            icon: Leaf,
-            title: "Productos naturales",
-            desc: "Cuidamos la piel, el pelaje y la sensibilidad de cada mascota con productos naturales y suaves.",
-          },
-          {
-            icon: Heart,
-            title: "Bienestar integral",
-            desc: "Nuestro objetivo no es solo que tu perro se vea bien, sino que también se sienta bien.",
-          },
+          { icon: Shield, title: "Sin bozales ni amarres", desc: "Priorizamos métodos de manejo respetuoso que permitan que cada perro viva la experiencia de forma positiva." },
+          { icon: Leaf, title: "Productos naturales", desc: "Cuidamos la piel, el pelaje y la sensibilidad de cada mascota con productos naturales y suaves." },
+          { icon: Heart, title: "Bienestar integral", desc: "Nuestro objetivo no es solo que tu perro se vea bien, sino que también se sienta bien." },
         ].map((item, i) => (
           <motion.div
             key={item.title}
             {...fadeUp}
-            transition={{ ...fadeUp.transition, delay: i * 0.15 }}
+            {...fadeUpDelay(i * 0.15)}
             className="bg-card rounded-2xl p-8 border border-border hover:shadow-lg transition-shadow duration-500"
           >
             <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">

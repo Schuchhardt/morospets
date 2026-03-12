@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { fadeUp, fadeUpDelay } from "@/lib/animations";
 
 const points = [
   "Atención sin estrés",
@@ -9,13 +10,6 @@ const points = [
   "Paciencia y manejo respetuoso",
   "Paseos para estimulación física y mental",
 ];
-
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-50px" },
-  transition: { duration: 0.6, ease: "easeOut" },
-};
 
 const Philosophy = () => (
   <section className="py-20 md:py-28 bg-primary/5">
@@ -31,7 +25,7 @@ const Philosophy = () => (
         </p>
       </motion.div>
 
-      <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
+      <motion.div {...fadeUp} {...fadeUpDelay(0.2)}>
         <div className="grid gap-4">
           {points.map((point, i) => (
             <motion.div
