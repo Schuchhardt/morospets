@@ -51,7 +51,7 @@ export const metadata: Metadata = {
       "En Moro's Pets ofrecemos peluquería canina y paseos con enfoque en bienestar animal. Sin bozales, sin amarres, productos naturales.",
     images: [
       {
-        url: "/images/hero-dog.jpg",
+        url: "/images/preview.png",
         width: 1200,
         height: 630,
         alt: "Moro's Pets — Peluquería Canina con Bienestar Animal",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: "Moro's Pets — Peluquería Canina con Bienestar Animal",
     description:
       "En Moro's Pets ofrecemos peluquería canina y paseos con enfoque en bienestar animal. Sin bozales, sin amarres, productos naturales.",
-    images: ["/images/hero-dog.jpg"],
+    images: ["/images/preview.png"],
   },
   robots: {
     index: true,
