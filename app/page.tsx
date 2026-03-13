@@ -3,6 +3,9 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Philosophy from "@/components/Philosophy";
 import Services from "@/components/Services";
+import NewLocation from "@/components/NewLocation";
+import PetTips from "@/components/PetTips";
+import FAQ from "@/components/FAQ";
 import Booking from "@/components/Booking";
 import InstagramSection from "@/components/Instagram";
 import Contact from "@/components/Contact";
@@ -17,7 +20,7 @@ const jsonLd = {
       "@id": "https://morospets.cl/#business",
       name: "Moro's Pets",
       description:
-        "Peluquería canina y paseos con enfoque en bienestar animal. Sin bozales, sin amarres, productos naturales.",
+        "Peluquería canina, petshop y paseos con enfoque en bienestar animal. Solo productos naturales, sin bozales. Los Cobres de Vitacura, Local D01.",
       url: "https://morospets.cl",
       telephone: "+56988881125",
       image: "https://morospets.cl/images/hero-dog.jpg",
@@ -123,6 +126,21 @@ const jsonLd = {
               },
             ],
           },
+          {
+            "@type": "OfferCatalog",
+            name: "Petshop",
+            itemListElement: [
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Product",
+                  name: "Productos naturales para mascotas",
+                  description:
+                    "Productos naturales seleccionados para el cuidado del pelaje, accesorios, juguetes y snacks saludables.",
+                },
+              },
+            ],
+          },
         ],
       },
     },
@@ -132,7 +150,7 @@ const jsonLd = {
       url: "https://morospets.cl",
       name: "Moro's Pets",
       description:
-        "Peluquería canina y paseos con enfoque en bienestar animal en Santiago, Chile.",
+        "Peluquería canina, petshop y paseos con enfoque en bienestar animal en Los Cobres de Vitacura, Santiago, Chile.",
       publisher: { "@id": "https://morospets.cl/#business" },
     },
     {
@@ -194,9 +212,12 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
+        <NewLocation />
         <About />
         <Philosophy />
         <Services />
+        <PetTips />
+        <FAQ />
         <Booking />
         <InstagramSection />
         <Contact />

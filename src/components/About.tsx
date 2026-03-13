@@ -1,10 +1,11 @@
-import { Heart, Leaf, Shield } from "lucide-react";
+import { Heart, Leaf, Shield, Crown } from "lucide-react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 const items = [
   { icon: Shield, title: "Sin bozales ni amarres", desc: "Priorizamos métodos de manejo respetuoso que permitan que cada perro viva la experiencia de forma positiva." },
-  { icon: Leaf, title: "Productos naturales", desc: "Cuidamos la piel, el pelaje y la sensibilidad de cada mascota con productos naturales y suaves." },
-  { icon: Heart, title: "Bienestar integral", desc: "Nuestro objetivo no es solo que tu perro se vea bien, sino que también se sienta bien." },
+  { icon: Leaf, title: "Solo productos naturales", desc: "Cuidamos la piel, el pelaje y la sensibilidad de cada mascota con productos naturales y suaves." },
+  { icon: Heart, title: "Pro bienestar animal", desc: "Nuestro objetivo no es solo que tu perro se vea bien, sino que también se sienta bien. Todo lo que hacemos está pensado en su bienestar." },
+  { icon: Crown, title: "Expertos en regalonearlos", desc: "Peluquería, petshop y paseos: cada servicio está diseñado para consentir a tu perro como se merece." },
 ];
 
 const About = () => (
@@ -22,7 +23,7 @@ const About = () => (
         </p>
       </AnimateOnScroll>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {items.map((item, i) => (
           <AnimateOnScroll
             key={item.title}

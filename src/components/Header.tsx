@@ -3,14 +3,17 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const WHATSAPP_LINK = "https://wa.me/56988881125?text=Hola,%20quiero%20agendar%20un%20servicio%20para%20mi%20perro";
 
 const navItems = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Sobre nosotros", href: "#sobre" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Inicio", href: "/" },
+  { label: "Peluquería", href: "/peluqueria" },
+  { label: "Paseos", href: "/paseos" },
+  { label: "Petshop", href: "/petshop" },
+  { label: "Tips", href: "/tips" },
+  { label: "Contacto", href: "/#contacto" },
 ];
 
 const Header = () => {
@@ -19,20 +22,20 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16">
-        <a href="#inicio" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <Image src="/images/moros-icon.png" alt="Moro's Pets" width={36} height={36} className="h-9 w-auto" />
           <span className="font-display font-bold text-lg tracking-tight text-foreground uppercase">Moro&apos;s Pets</span>
-        </a>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <a
             href={WHATSAPP_LINK}
@@ -54,9 +57,9 @@ const Header = () => {
       >
         <nav className="container flex flex-col gap-4 py-4">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
+            <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
               {item.label}
-            </a>
+            </Link>
           ))}
           <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="bg-accent text-accent-foreground px-5 py-2.5 rounded-lg text-sm font-semibold text-center hover:opacity-90 transition-opacity">
             Agendar servicio

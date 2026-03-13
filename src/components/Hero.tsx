@@ -8,14 +8,14 @@ const Hero = () => (
     <div className="container grid md:grid-cols-2 gap-8 items-center min-h-[calc(100vh-4rem)] py-12">
       <div className="flex flex-col gap-6 animate-hero-left">
         <span className="text-sm font-semibold text-accent tracking-wide uppercase">
-          Bienestar animal
+          📍 Los Cobres de Vitacura · Local D01
         </span>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-          Peluquería canina con enfoque en bienestar
+          Expertos en regalonear a tu perro
         </h1>
         <p className="text-lg text-muted-foreground max-w-md">
-          En Moro&apos;s Pets cuidamos a tu perro con respeto, paciencia y productos naturales.
-          Cada experiencia es tranquila, segura y libre de estrés.
+          Peluquería canina, petshop y paseos con enfoque en bienestar animal.
+          Solo productos naturales, sin bozales y con todo el cariño que tu perro merece.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 mt-2">
           <a
@@ -50,8 +50,8 @@ const Hero = () => (
           />
         </div>
         <div className="absolute -bottom-4 -left-4 bg-card rounded-xl p-4 shadow-lg border border-border">
-          <p className="font-display font-bold text-primary text-sm">Sin bozales · Sin estrés</p>
-          <p className="text-xs text-muted-foreground">Productos 100% naturales</p>
+          <p className="font-display font-bold text-primary text-sm">🐶 Pro bienestar animal</p>
+          <p className="text-xs text-muted-foreground">🌸 Solo productos naturales</p>
         </div>
       </div>
     </div>

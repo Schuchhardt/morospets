@@ -181,3 +181,37 @@ html {
   max-height: 400px;
   opacity: 1;
 }
+
+/* ── Prose styles for blog / tips pages ── */
+.prose-pet h3 {
+  @apply font-display font-bold text-lg text-foreground mt-8 mb-3;
+}
+
+.prose-pet h4 {
+  @apply font-display font-semibold text-base text-foreground mt-6 mb-2;
+}
+
+.prose-pet p {
+  @apply text-muted-foreground leading-relaxed mb-4;
+}
+
+.prose-pet ul,
+.prose-pet ol {
+  @apply mb-4 pl-5 space-y-1.5;
+}
+
+.prose-pet ul {
+  @apply list-disc;
+}
+
+.prose-pet ol {
+  @apply list-decimal;
+}
+
+.prose-pet li {
+  @apply text-muted-foreground leading-relaxed;
+}
+
+.prose-pet strong {
+  @apply text-foreground font-semibold;
+}
