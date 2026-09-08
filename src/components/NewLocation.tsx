@@ -29,9 +29,7 @@ const NewLocation = () => (
           <strong className="text-foreground">
             Los Cobres de Vitacura, Local D01
           </strong>
-          . Ven a conocernos y obtén un{" "}
-          <strong className="text-accent">descuento especial</strong> por ser de
-          nuestros primeros visitantes.
+          . Ven a conocernos y descubre todo lo que tenemos para tu mascota.
         </p>
 
         <div className="flex items-center justify-center gap-2 text-muted-foreground mb-8">
@@ -66,7 +64,7 @@ const NewLocation = () => (
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-7 py-3.5 rounded-xl font-semibold hover:opacity-90 transition-opacity"
         >
-          Quiero mi descuento
+          Quiero conocer el local
           <ArrowRight size={18} />
         </a>
       </AnimateOnScroll>
